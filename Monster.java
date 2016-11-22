@@ -24,6 +24,10 @@ public class Monster extends Character {
 	_name = "Monster";
     }
 
+    // Does nothing for Monsters
+    public void specialize() { }
+    public void normalize() { }
+    
     /*=============================================
       String about() -- returns descriptions character type
       pre:  
