@@ -57,7 +57,7 @@ public class Mage extends Character {
       pre:  
       post: Info is returned
       =============================================*/
-    public String about() {
+    public static String about() {
 	return "Mages are cunning and smart magicians, but aren't very strong.";
     }
 

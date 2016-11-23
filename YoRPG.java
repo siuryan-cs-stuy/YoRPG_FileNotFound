@@ -96,19 +96,19 @@ public class YoRPG
 	    //instantiate the player's character
 	    if ( character == 1 ) {
 		pat = new Warrior( name );
-		s = pat.about();
+		s = Warrior.about();
 	    } else if ( character == 2 ) {
 		pat = new Mage( name );
-		s = pat.about();
+		s = Mage.about();
 	    } else if ( character == 3 ) {
 		pat = new Rogue( name );
-		s = pat.about();
+		s = Rogue.about();
 	    } else if ( character == 4 ) {
 		pat = new Priest( name );
-		s = pat.about();
+		s = Priest.about();
 	    } else if ( character == 5 ) {
 		pat = new Archer( name );
-		s = pat.about();
+		s = Archer.about();
 	    } else {
 		s = "Invalid choice. Choose a character class from the list: ";
 	    }

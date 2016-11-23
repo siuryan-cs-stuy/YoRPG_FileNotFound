@@ -57,7 +57,7 @@ public class Rogue extends Character {
       pre:  
       post: Info is returned
       =============================================*/
-    public String about() {
+    public static String about() {
 	return "Rogues are sneaky, fast, and elusive, but aren't very sturdy.";
     }
     

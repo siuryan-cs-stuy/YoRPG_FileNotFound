@@ -57,7 +57,7 @@ public class Priest extends Character {
       pre:  
       post: Info is returned
       =============================================*/
-    public String about() {
+    public static String about() {
 	return "Priests are capable healers, but aren't very strong attack-wise.";
     }
 

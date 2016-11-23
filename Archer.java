@@ -57,7 +57,7 @@ public class Archer extends Character {
       pre:  
       post: Info is returned
       =============================================*/
-    public String about() {
+    public static String about() {
 	return "Archers are strong ranged fighters, but have low defense.";
     }
 

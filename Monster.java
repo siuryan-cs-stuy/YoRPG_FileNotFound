@@ -33,7 +33,7 @@ public class Monster extends Character {
       pre:  
       post: Info is returned
       =============================================*/
-    public String about() {
+    public static String about() {
 	return "The antagnoists of the game, Monsters are out to kill you!";
     }
 

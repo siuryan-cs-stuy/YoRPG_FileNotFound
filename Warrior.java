@@ -62,7 +62,7 @@ public class Warrior extends Character {
       pre:  
       post: Info is returned
       =============================================*/
-    public String about() {
+    public static String about() {
 	return "Warriors are fierce and strong fighters, but are slow.";
     }
 
