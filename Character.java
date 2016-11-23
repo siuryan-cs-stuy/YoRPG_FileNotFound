@@ -78,7 +78,7 @@ public abstract class Character {
     /*=============================================
       void lowerHP(int) -- lowers life by input value
       pre:  Input >= 0
-      post: Life instance var is lowered by input ammount.
+      post: Life instance var is lowered by input amount.
       =============================================*/
     public void lowerHP( int damageInflicted ) {
 	_hitPts = _hitPts - damageInflicted;
@@ -87,14 +87,14 @@ public abstract class Character {
     /*=============================================
       void specialize() -- prepares character for special attack
       pre:  
-      post: Attack of character is increased, defense is decreased
+      post: Attack of character is increased, defence is decreased
       =============================================*/
     public abstract void specialize();
 
     /*=============================================
       void normalize() -- revert stats back to normal
       pre:  
-      post: Attack and defense of character is de-specialized
+      post: Attack and defence of character is de-specialized
       =============================================*/
     public abstract void normalize();
 

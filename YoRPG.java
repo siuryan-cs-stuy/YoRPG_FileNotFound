@@ -93,22 +93,23 @@ public class YoRPG
 	    }
 	    catch ( IOException e ) { }
 
-	    //instantiate the player's character
+	    //instantiate the player's character by checking the character int,
+		//the return string shows an error choice if the # is not [1,5]
 	    if ( character == 1 ) {
 		pat = new Warrior( name );
-		s = Warrior.about();
+		s = pat.about();
 	    } else if ( character == 2 ) {
 		pat = new Mage( name );
-		s = Mage.about();
+		s = pat.about();
 	    } else if ( character == 3 ) {
 		pat = new Rogue( name );
-		s = Rogue.about();
+		s = pat.about();
 	    } else if ( character == 4 ) {
 		pat = new Priest( name );
-		s = Priest.about();
+		s = pat.about();
 	    } else if ( character == 5 ) {
 		pat = new Archer( name );
-		s = Archer.about();
+		s = pat.about();
 	    } else {
 		s = "Invalid choice. Choose a character class from the list: ";
 	    }
