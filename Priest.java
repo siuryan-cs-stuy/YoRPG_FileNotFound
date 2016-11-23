@@ -29,7 +29,8 @@ public class Priest extends Character {
       post: initializes instance vars. _name is set to input String.
       =============================================*/
     public Priest( String name ) {
-	super(name);
+	this();
+	_name = name;
     }
 
     /*=============================================
