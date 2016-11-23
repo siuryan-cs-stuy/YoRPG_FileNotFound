@@ -83,7 +83,6 @@ public class YoRPG
 	s += "3) Rogue\n";
 	s += "4) Priest\n";
 	s += "5) Archer\n";
-	s += "9000) God\n";
 	s += "Your input (as a number): ";
 	System.out.print( s );
 
