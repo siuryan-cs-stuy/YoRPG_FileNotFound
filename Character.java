@@ -64,6 +64,8 @@ public abstract class Character {
     public int attack( Character opponent ) {
 
 	int damage = (int)( (_strength * _attack) - opponent.getDefense() );
+	int damModifier = (int)((Math.random() * 10) - 5);
+	damage += damModifier;
 	//System.out.println( "\t\t**DIAG** damage: " + damage );
 
 	if ( damage < 0 )
