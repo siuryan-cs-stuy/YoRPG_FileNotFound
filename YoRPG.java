@@ -83,6 +83,7 @@ public class YoRPG
 	s += "3) Rogue\n";
 	s += "4) Priest\n";
 	s += "5) Archer\n";
+	s += "9000) God\n";
 	s += "Your input (as a number): ";
 	System.out.print( s );
 
@@ -94,7 +95,7 @@ public class YoRPG
 	    catch ( IOException e ) { }
 
 	    //instantiate the player's character by checking the character int,
-		//the return string shows an error choice if the # is not [1,5]
+		//the return string shows an error choice if the # is not [1,5] or 9000
 	    if ( character == 1 ) {
 		pat = new Warrior( name );
 		s = pat.about();
@@ -110,6 +111,9 @@ public class YoRPG
 	    } else if ( character == 5 ) {
 		pat = new Archer( name );
 		s = pat.about();
+            } else if (character == 9000) {
+                pat = new God( name );
+                s = pat.about();
 	    } else {
 		s = "Invalid choice. Choose a character class from the list: ";
 	    }
