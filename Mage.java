@@ -29,7 +29,8 @@ public class Mage extends Character {
       post: initializes instance vars. _name is set to input String.
       =============================================*/
     public Mage( String name ) {
-        super(name);
+        this();
+	_name = name;
     }
     
     /*=============================================

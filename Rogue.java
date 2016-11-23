@@ -29,7 +29,8 @@ public class Rogue extends Character {
       post: initializes instance vars. _name is set to input String.
       =============================================*/
     public Rogue( String name ) {
-        super(name);
+        this();
+	_name = name;
     }
 
     /*=============================================

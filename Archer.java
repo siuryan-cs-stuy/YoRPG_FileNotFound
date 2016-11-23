@@ -29,7 +29,8 @@ public class Archer extends Character {
       post: initializes instance vars. _name is set to input String.
       =============================================*/
     public Archer( String name ) {
-        super(name);
+        this();
+	_name = name;
     }
 
     /*=============================================
