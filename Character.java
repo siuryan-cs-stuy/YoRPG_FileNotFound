@@ -138,6 +138,20 @@ public abstract class Character {
 	return -1;
     }
 
+    /*=============================================
+      boolean isEmpty() -- returns true if _inventory contains only null indicies
+      pre:  _inventory has been initialized
+      post: returns a boolean
+      =============================================*/
+    private boolean isEmpty() {
+	for (int i = 0; i < _inventory.length; i++) {
+	    if (_inventory[i] != null) {
+		return false;
+	    }
+	}
+	return true;
+    }
+
     
     /*=============================================
       InventoryItems addItem() -- if _inventory has an empty index, put a InventoryItems                                  instance to _inventory in that index
@@ -165,7 +179,7 @@ public abstract class Character {
       =============================================*/
     public InventoryItems getItem() {
 	int pos = (int)(Math.random() * MAX_INVENTORY_SIZE);
-	while (_inventory[pos] == null) {
+	while (_inventory[pos] == null && !isEmpty()) {
 	    pos = (int)(Math.random() * MAX_INVENTORY_SIZE);
 	}
         return _inventory[pos];
@@ -179,7 +193,7 @@ public abstract class Character {
       =============================================*/
     public boolean removeItem( InventoryItems item ) {
 	for (int i = 0; i < MAX_INVENTORY_SIZE; i++) {
-	    if (_inventory[i].equals(item)) {
+	    if (_inventory[i] != null && _inventory[i].equals(item)) {
 		_inventory[i] = null;
 		return true;
 	    }
