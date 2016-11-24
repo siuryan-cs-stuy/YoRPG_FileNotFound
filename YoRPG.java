@@ -151,9 +151,11 @@ public class YoRPG
 
 		for (InventoryItems item : pat.getInventory()) {
 		    if (item != null) {
-			System.out.println( item.getName() + "," );
+			System.out.print( item.getName() + "," );
 		    }
 		}
+
+		System.out.println();
 		
 		try {
 		    System.out.println( "\nDo you feel lucky?" );
@@ -162,6 +164,7 @@ public class YoRPG
 		}
 		catch ( IOException e ) { }
 
+		// Use item
 		if ( i == 3 ) {
 		    try {
 			InventoryItems item = pat.getItem();
@@ -183,8 +186,10 @@ public class YoRPG
 		    }
 		}
 		else {
+		    // Use special attack
 		    if (i == 2)
 			pat.specialize();
+		    // Use normal attack
 		    else
 			pat.normalize();
 		    
@@ -197,6 +202,7 @@ public class YoRPG
 		    System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
 				    " for " + d2 + " points of damage.");
 
+		    // Adds item to inventory, if item is not named "none"
 		    InventoryItems item = pat.addItem();
 		    if (!item.equals("none")) {
 			System.out.println( "\nA " + item.getName() + " was added to " +

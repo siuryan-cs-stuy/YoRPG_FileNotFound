@@ -13,7 +13,8 @@ public abstract class Character {
     protected InventoryItems[] _inventory;
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
+    public static final int MAX_INVENTORY_SIZE = 5;
+    
     /*=============================================
       default constructor
       pre:  instance vars are declared
@@ -25,7 +26,7 @@ public abstract class Character {
 	_defense = 40;
 	_attack = .4;
 	_name = "John Adams";
-	_inventory = new InventoryItems[YoRPG.MAX_ENCOUNTERS];
+	_inventory = new InventoryItems[MAX_INVENTORY_SIZE];
     }
 
      /*=============================================
@@ -90,6 +91,7 @@ public abstract class Character {
 	_hitPts = _hitPts - damageInflicted;
     }
 
+    
     /*=============================================
       void gainHP(int) -- adds life by input value
       pre:  Input >= 0
@@ -99,6 +101,7 @@ public abstract class Character {
 	_hitPts = _hitPts + pointsHealed;
     }
 
+    
     /*=============================================
       void specialize() -- prepares character for special attack
       pre:  
@@ -120,6 +123,12 @@ public abstract class Character {
       =============================================*/
     public abstract String about();
 
+    
+    /*=============================================
+      int posEmptyIndex() -- returns first index in _inventory that is null
+      pre:  _inventory has been initialized
+      post: pos is returned, or returns -1 if no index is null
+      =============================================*/
     private int posEmptyIndex() {
 	for (int i = 0; i < _inventory.length; i++) {
 	    if (_inventory[i] == null) {
@@ -129,21 +138,47 @@ public abstract class Character {
 	return -1;
     }
 
+    
+    /*=============================================
+      InventoryItems addItem() -- if _inventory has an empty index, put a InventoryItems                                  instance to _inventory in that index
+      pre:  _inventory has been initialized
+      post: InventoryItems instance is added, instance is returned
+      =============================================*/
     public InventoryItems addItem() {
-	InventoryItems item = new InventoryItems();
-	if (!item.equals("none")) {
-	    _inventory[ posEmptyIndex() ] = item;
+	InventoryItems item;
+	if (posEmptyIndex() != -1) {
+	    item = new InventoryItems();
+	    if (!item.equals("none")) {
+		_inventory[ posEmptyIndex() ] = item;
+	    }
+	} else {
+	    item = new InventoryItems(true);
 	}
 	return item;
     }
 
+    
+    /*=============================================
+      InventoryItems getItem() -- returns a InventoryItems inside _inventory
+      pre:  _inventory has been initialized
+      post: InventoryItems instance is returned
+      =============================================*/
     public InventoryItems getItem() {
-	int pos = (int)(Math.random() * (posEmptyIndex()-1));
+	int pos = (int)(Math.random() * MAX_INVENTORY_SIZE);
+	while (_inventory[pos] == null) {
+	    pos = (int)(Math.random() * MAX_INVENTORY_SIZE);
+	}
         return _inventory[pos];
     }
 
+    
+    /*=============================================
+      boolean removeItem() -- replaces InventoryItems item from _inventory with null
+      pre:  _inventory has been initialized, item is a InventoryItems instance in _inventory
+      post: item is replaced with null, success of operation is returned as a boolean
+      =============================================*/
     public boolean removeItem( InventoryItems item ) {
-	for (int i = 0; i < _inventory.length; i++) {
+	for (int i = 0; i < MAX_INVENTORY_SIZE; i++) {
 	    if (_inventory[i].equals(item)) {
 		_inventory[i] = null;
 		return true;
