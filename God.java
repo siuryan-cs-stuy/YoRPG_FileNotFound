@@ -48,8 +48,8 @@ public class God extends Character {
       post: Attack of character is increased, defense is decreased
       =============================================*/
     public void specialize() {
-	_attack = .75;
-	_defense = 20;
+	_attack = 9.9;
+	_defense = 9999;
     }
 
     /*=============================================
@@ -58,8 +58,8 @@ public class God extends Character {
       post: Attack and defense of character is de-specialized
       =============================================*/
     public void normalize() {
-	_attack = .45;
-	_defense = 40;
+	_attack = 9.0;
+	_defense = 9000;
     }
 
     /*=============================================
