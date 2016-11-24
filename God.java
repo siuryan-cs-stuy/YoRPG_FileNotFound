@@ -36,8 +36,10 @@ public class God extends Character {
       post: initializes instance vars. _name is set to input String.
       =============================================*/
     public God( String name ) {
-	this();
-	_name = name;
+        this();
+	if (!name.equals("")) {
+	    _name = name;
+	}
     }
 
     /*=============================================

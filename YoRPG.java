@@ -41,10 +41,8 @@ public class YoRPG
 	newGame();
     }
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
+    
     // ~~~~~~~~~~~~~~ METHODS ~~~~~~~~~~~~~~~~~~~
-
     /*=============================================
       void newGame() -- facilitates info gathering to begin a new game
       pre:  
@@ -117,7 +115,8 @@ public class YoRPG
 		s = "Invalid choice. Choose a character class from the list: ";
 	    }
 
-	    System.out.print( s );
+	    System.out.print( s + "\n\n");
+	    System.out.println("~~~~~~ START OF GAME ~~~~~~");
 	}
 
     }//end newGame()
@@ -146,26 +145,67 @@ public class YoRPG
 		// Give user the option of using a special attack:
 		// If you land a hit, you incur greater damage,
 		// ...but if you get hit, you take more damage.
+		System.out.println( "You have " + pat.getHitPts() + " HP." );
+		System.out.println( "The monster has " + smaug.getHitPts() + " HP." );
+		System.out.print( "Your inventory: ");
+
+		for (InventoryItems item : pat.getInventory()) {
+		    if (item != null) {
+			System.out.println( item.getName() + "," );
+		    }
+		}
+		
 		try {
 		    System.out.println( "\nDo you feel lucky?" );
-		    System.out.println( "\t1: Nay.\n\t2: Aye!" );
+		    System.out.println( "\t1: Nay.\n\t2: Aye!\n\t3: Huh?" );
 		    i = Integer.parseInt( in.readLine() );
 		}
 		catch ( IOException e ) { }
 
-		if ( i == 2 )
-		    pat.specialize();
-		else
-		    pat.normalize();
+		if ( i == 3 ) {
+		    try {
+			InventoryItems item = pat.getItem();
+			if (item.getType().equals("hp")) {
+			    pat.gainHP( item.getEffect() );
+			    System.out.println( "\n" + pat.getName() + " used a " +
+						item.getName() + " and gained " +
+						item.getEffect() + " HP.");
+			} else if (item.getType().equals("att")) {
+			    smaug.lowerHP( item.getEffect() );
+			    System.out.println( "\n" + pat.getName() + " threw a " +
+						item.getName() + " and dealt " + 
+						item.getEffect() + " points of damage.");
+			}
+			pat.removeItem( item );
+		    }
+		    catch (NullPointerException e) {
+			System.out.println("\nYou don't have any items!");
+		    }
+		}
+		else {
+		    if (i == 2)
+			pat.specialize();
+		    else
+			pat.normalize();
+		    
+		    d1 = pat.attack( smaug );
+		    d2 = smaug.attack( pat );
 
-		d1 = pat.attack( smaug );
-		d2 = smaug.attack( pat );
-
-		System.out.println( "\n" + pat.getName() + " dealt " + d1 +
+		    System.out.println( "\n" + pat.getName() + " dealt " + d1 +
 				    " points of damage.");
 
-		System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
+		    System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
 				    " for " + d2 + " points of damage.");
+
+		    InventoryItems item = pat.addItem();
+		    if (!item.equals("none")) {
+			System.out.println( "\nA " + item.getName() + " was added to " +
+					    pat.getName() + "'s inventory.");
+		    }
+		}
+
+		System.out.println();
+		
 	    }//end while
 
 	    //option 1: you & the monster perish
@@ -210,6 +250,7 @@ public class YoRPG
 	    System.out.println();
 	}
 
+	System.out.println();
 	System.out.println( "Thy game doth be over." );
 	/*================================================
 	  ================================================*/

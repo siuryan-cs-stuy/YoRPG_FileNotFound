@@ -30,7 +30,9 @@ public class Rogue extends Character {
       =============================================*/
     public Rogue( String name ) {
         this();
-	_name = name;
+	if (!name.equals("")) {
+	    _name = name;
+	}
     }
 
     /*=============================================

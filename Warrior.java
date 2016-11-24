@@ -34,8 +34,10 @@ public class Warrior extends Character {
       post: initializes instance vars. _name is set to input String.
       =============================================*/
     public Warrior( String name ) {
-	this();
-	_name = name;
+        this();
+	if (!name.equals("")) {
+	    _name = name;
+	}
     }
 
     /*=============================================

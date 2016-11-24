@@ -10,6 +10,7 @@ public abstract class Character {
     protected int _defense;
     protected double _attack;
     protected String _name;
+    protected InventoryItems[] _inventory;
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -24,6 +25,7 @@ public abstract class Character {
 	_defense = 40;
 	_attack = .4;
 	_name = "John Adams";
+	_inventory = new InventoryItems[YoRPG.MAX_ENCOUNTERS];
     }
 
      /*=============================================
@@ -42,7 +44,9 @@ public abstract class Character {
     // ~~~~~~~~~~~~~~ ACCESSORS ~~~~~~~~~~~~~~~~~
     public int getDefense() { return _defense; }
     public String getName() { return _name; }
-    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    public int getHitPts() { return _hitPts; }
+    public InventoryItems[] getInventory() { return _inventory; }
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     
     /*=============================================
@@ -87,6 +91,15 @@ public abstract class Character {
     }
 
     /*=============================================
+      void gainHP(int) -- adds life by input value
+      pre:  Input >= 0
+      post: Life instance var is increased by input amount.
+      =============================================*/
+    public void gainHP( int pointsHealed ) {
+	_hitPts = _hitPts + pointsHealed;
+    }
+
+    /*=============================================
       void specialize() -- prepares character for special attack
       pre:  
       post: Attack of character is increased, defence is decreased
@@ -106,5 +119,37 @@ public abstract class Character {
       post: Info is returned
       =============================================*/
     public abstract String about();
+
+    private int posEmptyIndex() {
+	for (int i = 0; i < _inventory.length; i++) {
+	    if (_inventory[i] == null) {
+		return i;
+	    }
+	}
+	return -1;
+    }
+
+    public InventoryItems addItem() {
+	InventoryItems item = new InventoryItems();
+	if (!item.equals("none")) {
+	    _inventory[ posEmptyIndex() ] = item;
+	}
+	return item;
+    }
+
+    public InventoryItems getItem() {
+	int pos = (int)(Math.random() * (posEmptyIndex()-1));
+        return _inventory[pos];
+    }
+
+    public boolean removeItem( InventoryItems item ) {
+	for (int i = 0; i < _inventory.length; i++) {
+	    if (_inventory[i].equals(item)) {
+		_inventory[i] = null;
+		return true;
+	    }
+	}
+	return false;
+    }
 
 }//end class Character

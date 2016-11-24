@@ -30,7 +30,9 @@ public class Mage extends Character {
       =============================================*/
     public Mage( String name ) {
         this();
-	_name = name;
+	if (!name.equals("")) {
+	    _name = name;
+	}
     }
     
     /*=============================================
