@@ -159,7 +159,7 @@ public class YoRPG
 		
 		try {
 		    System.out.println( "\nDo you feel lucky?" );
-		    System.out.println( "\t1: Nay.\n\t2: Aye!\n\t3: Huh?" );
+		    System.out.println( "\t1: Nay.\n\t2: Aye!\n\t3: Huh?\n\t4: Time for Hero special?" );
 		    i = Integer.parseInt( in.readLine() );
 		}
 		catch ( IOException e ) { }

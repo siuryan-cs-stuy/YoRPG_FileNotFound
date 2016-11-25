@@ -200,5 +200,13 @@ public abstract class Character {
 	}
 	return false;
     }
+	
+	/*==========================
+	String heroSpecial()
+	pre:
+	post: executes a character's special move, for example, a priest would heal itself, and
+			returns a string summarizing what happened.
+	========================*/
+	public abstract String heroSpecial();
 
 }//end class Character

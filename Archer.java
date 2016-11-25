@@ -63,6 +63,18 @@ public class Archer extends Character {
     public String about() {
 	return "Archers are strong ranged fighters, but have low defense.";
     }
+	
+	/*==========================
+	String heroSpecial()
+	pre:
+	post: executes a character's special move, for example, a priest would heal itself, and
+			returns a string summarizing what happened.
+	========================*/
+	public String heroSpecial(){
+		return "test";
+	}
+	
+	
 
 
 }//end class Archer

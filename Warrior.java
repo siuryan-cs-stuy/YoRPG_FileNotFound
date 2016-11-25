@@ -68,6 +68,17 @@ public class Warrior extends Character {
     public String about() {
 	return "Warriors are fierce and strong fighters, but are slow.";
     }
+	
+		/*==========================
+	String heroSpecial()
+	pre:
+	post: executes a character's special move, for example, a priest would heal itself, and
+			returns a string summarizing what happened.
+	========================*/
+		public String heroSpecial(){
+		return "test";
+	}
+	
 
 
 }//end class Warrior

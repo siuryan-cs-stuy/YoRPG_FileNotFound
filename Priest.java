@@ -63,6 +63,17 @@ public class Priest extends Character {
     public String about() {
 	return "Priests are capable healers, but aren't very strong attack-wise.";
     }
+	
+		/*==========================
+	String heroSpecial()
+	pre:
+	post: executes a character's special move, for example, a priest would heal itself, and
+			returns a string summarizing what happened.
+	========================*/
+		public String heroSpecial(){
+		return "test";
+	}
+	
 
 
 }//end class Priest
