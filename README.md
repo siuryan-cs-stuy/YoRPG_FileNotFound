@@ -17,5 +17,5 @@ YoRPG game created by Ryan Siu, Jonathan Quang, and Rihui Zheng
 - Added a new class called InventoryItems for implementing inventories
 
 ##TODO:
-- Add special effects for each character (priest = healing, etc)
+- Add hero special moves for each character (priest = healing, etc)
 - Add more intro/conclusion text (story?)
