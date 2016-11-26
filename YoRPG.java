@@ -163,6 +163,10 @@ public class YoRPG
 		    i = Integer.parseInt( in.readLine() );
 		}
 		catch ( IOException e ) { }
+		
+		if (i == 4) {
+			System.out.println(pat.heroSpecial());
+		}
 
 		// Use item
 		if ( i == 3 ) {
