@@ -1,4 +1,4 @@
-# YoRPG_FileNotFound
+# YoRPG by Team FileNotFound
 YoRPG game created by Ryan Siu, Jonathan Quang, and Rihui Zheng
 
 ##Instructions:
