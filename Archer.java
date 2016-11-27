@@ -71,7 +71,15 @@ public class Archer extends Character {
 			returns a string summarizing what happened.
 	========================*/
 	public String heroSpecial(){
-		return "test";
+		if (((int) (Math.random()*99)) >= 50){
+			this._strength+=10;
+			return "your archer casts strengthening magic on the bow, its strength has increased to " + this._strength;
+		}
+		else {
+			this._hitPts-=10;
+			return "your archer messes up its strengthening magic, taking 10 damage";
+		}
+		
 	}
 	
 	

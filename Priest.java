@@ -71,7 +71,17 @@ public class Priest extends Character {
 			returns a string summarizing what happened.
 	========================*/
 		public String heroSpecial(){
-		return "test";
+		if (((int) (Math.random()*99)) >= 50){
+			this._hitPts+=10;
+			return "your priest heals itself to " + this._hitPts;
+		}
+		else {
+			if (this._strength > 0){
+			this._strength-=5;
+			}
+			return "your priest misheals a muscle, decreasing strength to " + this._strength;
+		}
+		
 	}
 	
 

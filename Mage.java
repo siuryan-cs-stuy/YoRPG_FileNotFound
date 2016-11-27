@@ -71,7 +71,16 @@ public class Mage extends Character {
 			returns a string summarizing what happened.
 	========================*/
 		public String heroSpecial(){
-		return "test";
+		if (((int) (Math.random()*99)) >= 50){
+			this._defense+=20;
+		return "your mage casts a magic barrier, raising defence to " + this._defense;
+		}
+		else {
+			if (this._defense > 0){
+				this._defense-=5;
+			}
+		return "your mage fails to cast magic barrier, lowering defence to: " + this._defense;
+		}
 	}
 	
 

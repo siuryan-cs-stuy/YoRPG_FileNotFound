@@ -79,8 +79,8 @@ public class God extends Character {
 	========================*/
 		public String heroSpecial(){
 		if (((int) Math.random()*100) >= 1){
-		this._hitPts+=1000;
-		this._strength+=1000;
+			this._hitPts+=1000;
+			this._strength+=1000;
 		return "your character's HP and strength have increased to " + this._hitPts + " " + this._strength;
 		}
 		else {
