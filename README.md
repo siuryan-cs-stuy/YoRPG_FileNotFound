@@ -7,7 +7,6 @@ Compile and run the YoRPG.java file.
 javac YoRPG.java
 java YoRPG
 ```
-<br>
 Follow the prompts as you are guided through the world of YoRPG, choosing your character class, a difficulty, and your very own hero name. You will encounter five rounds of adventure, battle, or perhaps, nothing at all. Will you survive?
 
 ##Feature Additions:
