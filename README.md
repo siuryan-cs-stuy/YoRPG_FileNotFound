@@ -16,3 +16,4 @@ YoRPG game created by Ryan Siu, Jonathan Quang, and Rihui Zheng
 
 ##Architecture Modifications:
 - Added a new class called InventoryItems for implementing inventories
+  - Each Character has an inventory (array of InventoryItems objects) as an instance variable
