@@ -22,6 +22,7 @@ public class YoRPG
     //each round, a Warrior and a Monster will be instantiated...
     private Character pat;   //Is it man or woman?
     private Monster smaug; //Friendly generic monster name?
+    private Pet wolf;   //Cuuuuuute!
 
     private int moveCount;
     private boolean gameOver;
@@ -62,10 +63,19 @@ public class YoRPG
 	s += "Selection: ";
 	System.out.print( s );
 
-	try {
-	    difficulty = Integer.parseInt( in.readLine() );
+	while (difficulty == 0) {
+	    int diff = 0;
+	    try {
+		diff = Integer.parseInt( in.readLine() );
+	    }
+	    catch ( IOException e ) { }
+	    if (diff > 0 && diff < 4) {
+		difficulty = diff;
+	    }
+	    else {
+		System.out.println("Invalid Choice. Try Again.");
+	    }
 	}
-	catch ( IOException e ) { }
 
 	s = "Intrepid warrior, what doth thy call thyself? (State your name): ";
 	System.out.print( s );
@@ -114,10 +124,12 @@ public class YoRPG
 	    } else {
 		s = "Invalid choice. Choose a character class from the list: ";
 	    }
+	
 
-	    System.out.print( s + "\n\n");
-	    System.out.println("~~~~~~ START OF GAME ~~~~~~");
+	System.out.print( s );
 	}
+	System.out.println("\n\n~~~~~~ START OF GAME ~~~~~~");
+	
 
     }//end newGame()
 
@@ -131,7 +143,7 @@ public class YoRPG
     public boolean playTurn() {
 
 	int i = 1;
-	int d1, d2;
+	int d1, d2, d3;
 
 	if ( Math.random() >= ( difficulty / 3.0 ) )
 	    System.out.println( "\nNothing to see here. Move along!" );
@@ -199,12 +211,16 @@ public class YoRPG
 		    
 		    d1 = pat.attack( smaug );
 		    d2 = smaug.attack( pat );
+		    d3 = wolf.attack( smaug );
 
 		    System.out.println( "\n" + pat.getName() + " dealt " + d1 +
 				    " points of damage.");
 
 		    System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
 				    " for " + d2 + " points of damage.");
+
+		    System.out.println( "\n" + wolf.getName() + " bit Ye Olde Monster for" +
+		    			+ d3 + " points of damage.");
 
 		    // Adds item to inventory, if item is not named "none"
 		    InventoryItems item = pat.addItem();
