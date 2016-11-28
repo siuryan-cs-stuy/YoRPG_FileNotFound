@@ -17,13 +17,17 @@ Follow the prompts as you are guided through the world of YoRPG, choosing your c
 - Added element of randomness to attack damage for all Characters
 - Secret Easter Egg class! ;)
 - Modifications to UI 
-  - Changed intro/conclusion text
   - Added helpful information between turns
-- More choices between turns (use item, use special hero move)
+- More choices between turns
+  - Use items
+  - Special hero moves can affect your stats either positively or negatively
+- Pets (cause who doesn't want their own dragon)
+  - Deal additional damage to opponent when attacking
 
 ##Architecture Modifications:
 - Added a new class called InventoryItems for implementing inventories
   - Each Character has an inventory (array of InventoryItems objects) as an instance variable
+- New classes for pets
 
 ##Gameplay Tips:
 - Not all Character classes are created equal. Which one is the best?
