@@ -22,7 +22,7 @@ public class YoRPG
     //each round, a Warrior and a Monster will be instantiated...
     private Character pat;   //Is it man or woman?
     private Monster smaug; //Friendly generic monster name?
-    private Pet wolf;   //Cuuuuuute!
+    private Character bones;   //Cuuuuuute!
 
     private int moveCount;
     private boolean gameOver;
@@ -128,13 +128,47 @@ public class YoRPG
 
 	System.out.print( s );
 	}
+	
 	s = "\nThat is a nice pet you got there. What be it's name?";
 	System.out.println(s);
 	try {
 	    pName = in.readLine();
 	}
 	catch ( IOException e ) { }
-	wolf = new Pet(pName);
+
+	s = "That be a nice name. What kind of pet is it?\n";
+	s += "1) Dragon\n";
+	s += "2) Wolf\n";
+	s += "3) Serpent\n";
+	s += "Your choice (as a number): ";
+	System.out.print( s );
+	
+	while (bones == null) {
+	    int pet = 0;
+	    try {
+		pet = Integer.parseInt( in.readLine() );
+	    }
+	    catch ( IOException e ) { }
+
+	    //instantiate the player's pet by checking the pet int,
+		//the return string shows an error choice if the # is not [1,3] or 9000
+	    if ( pet == 1 ) {
+		bones = new Dragon( pName );
+		s = bones.about();
+	    } else if ( pet == 2 ) {
+		bones = new Wolf( pName );
+		s = bones.about();
+	    } else if ( pet == 3 ) {
+		bones = new Serpent( pName );
+		s = bones.about();
+            } else if (pet == 9000) {
+                bones = new doG( pName );
+                s = bones.about();
+	    } else {
+		s = "Invalid choice. Choose a pet type from the list: ";
+	    }
+	    System.out.println(s);
+	}
 	
 	System.out.println("\n\n~~~~~~ START OF GAME ~~~~~~");
 	
@@ -219,7 +253,7 @@ public class YoRPG
 		    
 		    d1 = pat.attack( smaug );
 		    d2 = smaug.attack( pat );
-		    d3 = wolf.attack( smaug );
+		    d3 = bones.attack( smaug );
 
 		    System.out.println( "\n" + pat.getName() + " dealt " + d1 +
 				    " points of damage.");
@@ -227,7 +261,7 @@ public class YoRPG
 		    System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
 				    " for " + d2 + " points of damage.");
 
-		    System.out.println( "\n" + wolf.getName() + " bit Ye Olde Monster for " +
+		    System.out.println( "\n" + bones.getName() + " bit Ye Olde Monster for " +
 		    			+ d3 + " points of damage.");
 
 		    // Adds item to inventory, if item is not named "none"

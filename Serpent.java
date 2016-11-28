@@ -1,9 +1,8 @@
 /*=============================================
-  class Monster -- Represents random incarnations of 
-  the adventurer's natural enemy in Ye Olde RPG
+  class Serpent -- a pet of the protagonist.
   =============================================*/
 
-public class Pet extends Character {
+public class Serpent extends Character {
 
     // ~~~~~~~~~~~ INSTANCE VARIABLES ~~~~~~~~~~~
     // inherited from superclass
@@ -15,9 +14,9 @@ public class Pet extends Character {
       pre:  instance vars are declared
       post: initializes instance vars.
       =============================================*/
-    public Pet() {
+    public Serpent() {
 	super();
-	_strength = 5 + (int)( Math.random() * 11 ); // [5,15)
+	_strength = 30 + (int)( Math.random() * 11 );
 	_attack = 1;
     }
 
@@ -26,7 +25,7 @@ public class Pet extends Character {
       pre:  instance vars are declared
       post: initializes instance vars. _name is set to input String.
       =============================================*/
-    public Pet( String name ) {
+    public Serpent( String name ) {
 	this();
 	if (!name.equals("")) {
 	    _name = name;
@@ -43,7 +42,7 @@ public class Pet extends Character {
       post: Info is returned
       =============================================*/
     public String about() {
-	return "The trusty sidekick of players, will attack any monster in sight.";
+	return "Serpents are weak but can strike its target at an insane speed.";
     }
 	
 		/*==========================
@@ -58,4 +57,4 @@ public class Pet extends Character {
 	
 
 
-}//end class Pet
+}//end class Serpent
