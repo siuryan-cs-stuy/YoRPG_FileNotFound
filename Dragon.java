@@ -45,15 +45,15 @@ public class Dragon extends Character {
 	return "Although dargons can dish out high damage, it is very slow.";
     }
 	
-		/*==========================
-	String heroSpecial()
-	pre:
-	post: executes a character's special move, for example, a priest would heal itself, and
-			returns a string summarizing what happened.
-	========================*/
-		public String heroSpecial(){
-		return "test";
-	}
+    /*==========================
+      String heroSpecial()
+      pre:
+      post: executes a character's special move, for example, a priest would heal itself, and
+      returns a string summarizing what happened.
+      ========================*/
+    public String heroSpecial(){
+	return "test";
+    }
 	
 
 

@@ -71,22 +71,22 @@ public class God extends Character {
 	return "Gods are immortal. Therefore, you will always win.";
     }
 	
-		/*==========================
-	String heroSpecial()
-	pre:
-	post: executes a character's special move, for example, a priest would heal itself, and
-			returns a string summarizing what happened.
-	========================*/
-		public String heroSpecial(){
-		if (((int) Math.random()*100) >= 1){
-			this._hitPts+=1000;
-			this._strength+=1000;
-		return "your character's HP and strength have increased to " + this._hitPts + " " + this._strength;
-		}
-		else {
-		return "your special move has failed";
-		}
+    /*==========================
+      String heroSpecial()
+      pre:
+      post: executes a character's special move, for example, a priest would heal itself, and
+      returns a string summarizing what happened.
+      ========================*/
+    public String heroSpecial(){
+	if (((int) Math.random()*100) >= 1){
+	    this._hitPts+=1000;
+	    this._strength+=1000;
+	    return "your character's HP and strength have increased to " + this._hitPts + " " + this._strength;
 	}
+	else {
+	    return "your special move has failed";
+	}
+    }
 	
 
 

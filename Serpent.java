@@ -45,15 +45,15 @@ public class Serpent extends Character {
 	return "Serpents are weak but can strike its target at an insane speed.";
     }
 	
-		/*==========================
-	String heroSpecial()
-	pre:
-	post: executes a character's special move, for example, a priest would heal itself, and
-			returns a string summarizing what happened.
-	========================*/
-		public String heroSpecial(){
-		return "test";
-	}
+    /*==========================
+      String heroSpecial()
+      pre:
+      post: executes a character's special move, for example, a priest would heal itself, and
+      returns a string summarizing what happened.
+      ========================*/
+    public String heroSpecial(){
+	return "test";
+    }
 	
 
 

@@ -55,7 +55,7 @@ public class Rogue extends Character {
 	_defense = 30;
     }
 
-     /*=============================================
+    /*=============================================
       String about() -- returns descriptions character type
       pre:  
       post: Info is returned
@@ -64,25 +64,25 @@ public class Rogue extends Character {
 	return "Rogues are sneaky, fast, and elusive, but aren't very sturdy.";
     }
 	
-		/*==========================
-	String heroSpecial()
-	pre:
-	post: executes a character's special move, for example, a priest would heal itself, and
-			returns a string summarizing what happened.
-	========================*/
-		public String heroSpecial(){
-		if (((int) (Math.random()*99)) >= 50){
-			this._hitPts -=5;
-			this._defense -=5;
-			this._strength +=20;
-			return "your rogue sacrifices HP and Defence for its strength to increase to " + this._strength + "but it now has " + this._hitPts + " HP " + this._defense + " defence";
-		}
-		else {
-			this._hitPts-=-15;
-			return "your rogue messes up the sacrifice, lowering HP by 15";
-		}
-		
+    /*==========================
+      String heroSpecial()
+      pre:
+      post: executes a character's special move, for example, a priest would heal itself, and
+      returns a string summarizing what happened.
+      ========================*/
+    public String heroSpecial(){
+	if (((int) (Math.random()*99)) >= 50){
+	    this._hitPts -=5;
+	    this._defense -=5;
+	    this._strength +=20;
+	    return "your rogue sacrifices HP and Defence for its strength to increase to " + this._strength + "but it now has " + this._hitPts + " HP " + this._defense + " defence";
 	}
+	else {
+	    this._hitPts-=-15;
+	    return "your rogue messes up the sacrifice, lowering HP by 15";
+	}
+		
+    }
 	
     
 

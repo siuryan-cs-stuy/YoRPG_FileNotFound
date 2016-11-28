@@ -69,24 +69,24 @@ public class Warrior extends Character {
 	return "Warriors are fierce and strong fighters, but are slow.";
     }
 	
-		/*==========================
-	String heroSpecial()
-	pre:
-	post: executes a character's special move, for example, a priest would heal itself, and
-			returns a string summarizing what happened.
-	========================*/
-		public String heroSpecial(){
-		if (((int) (Math.random()*99)) >= 50){
-			this._strength+=20;
-			return "your warrior summons a magical steroid and eats it, your warrior's strength has increased to " + this._strength;
-		}
-		else {
-			this._hitPts-=10;
-			this._defense -=10;
-			return "your warrior accidentally summons a bad magic steroid, lowering HP and defence by 10" ;
-		}
-		
+    /*==========================
+      String heroSpecial()
+      pre:
+      post: executes a character's special move, for example, a priest would heal itself, and
+      returns a string summarizing what happened.
+      ========================*/
+    public String heroSpecial(){
+	if (((int) (Math.random()*99)) >= 50){
+	    this._strength+=20;
+	    return "your warrior summons a magical steroid and eats it, your warrior's strength has increased to " + this._strength;
 	}
+	else {
+	    this._hitPts-=10;
+	    this._defense -=10;
+	    return "your warrior accidentally summons a bad magic steroid, lowering HP and defence by 10" ;
+	}
+		
+    }
 	
 
 

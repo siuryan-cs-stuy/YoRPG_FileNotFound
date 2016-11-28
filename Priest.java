@@ -55,7 +55,7 @@ public class Priest extends Character {
 	_defense = 35;
     }
 
-     /*=============================================
+    /*=============================================
       String about() -- returns descriptions character type
       pre:  
       post: Info is returned
@@ -64,25 +64,25 @@ public class Priest extends Character {
 	return "Priests are capable healers, but aren't very strong attack-wise.";
     }
 	
-		/*==========================
-	String heroSpecial()
-	pre:
-	post: executes a character's special move, for example, a priest would heal itself, and
-			returns a string summarizing what happened.
-	========================*/
-		public String heroSpecial(){
-		if (((int) (Math.random()*99)) >= 50){
-			this._hitPts+=10;
-			return "your priest heals itself to " + this._hitPts;
-		}
-		else {
-			if (this._strength > 0){
-			this._strength-=5;
-			}
-			return "your priest misheals a muscle, decreasing strength to " + this._strength;
-		}
-		
+    /*==========================
+      String heroSpecial()
+      pre:
+      post: executes a character's special move, for example, a priest would heal itself, and
+      returns a string summarizing what happened.
+      ========================*/
+    public String heroSpecial(){
+	if (((int) (Math.random()*99)) >= 50){
+	    this._hitPts+=10;
+	    return "your priest heals itself to " + this._hitPts;
 	}
+	else {
+	    if (this._strength > 0){
+		this._strength-=5;
+	    }
+	    return "your priest misheals a muscle, decreasing strength to " + this._strength;
+	}
+		
+    }
 	
 
 

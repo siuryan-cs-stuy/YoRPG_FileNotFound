@@ -64,24 +64,24 @@ public class Mage extends Character {
 	return "Mages are cunning and smart magicians, but aren't very strong.";
     }
 	
-		/*==========================
-	String heroSpecial()
-	pre:
-	post: executes a character's special move, for example, a priest would heal itself, and
-			returns a string summarizing what happened.
-	========================*/
-		public String heroSpecial(){
-		if (((int) (Math.random()*99)) >= 50){
-			this._defense+=20;
-		return "your mage casts a magic barrier, raising defence to " + this._defense;
-		}
-		else {
-			if (this._defense > 0){
-				this._defense-=5;
-			}
-		return "your mage fails to cast magic barrier, lowering defence to: " + this._defense;
-		}
+    /*==========================
+      String heroSpecial()
+      pre:
+      post: executes a character's special move, for example, a priest would heal itself, and
+      returns a string summarizing what happened.
+      ========================*/
+    public String heroSpecial(){
+	if (((int) (Math.random()*99)) >= 50){
+	    this._defense+=20;
+	    return "your mage casts a magic barrier, raising defence to " + this._defense;
 	}
+	else {
+	    if (this._defense > 0){
+		this._defense-=5;
+	    }
+	    return "your mage fails to cast magic barrier, lowering defence to: " + this._defense;
+	}
+    }
 	
 
 }//end class Mage
