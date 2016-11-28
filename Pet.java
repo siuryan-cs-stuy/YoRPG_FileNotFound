@@ -19,7 +19,18 @@ public class Pet extends Character {
 	super();
 	_strength = 5 + (int)( Math.random() * 11 ); // [5,15)
 	_attack = 1;
-	_name = "Wolf";
+    }
+
+    /*=============================================
+      overloaded constructor
+      pre:  instance vars are declared
+      post: initializes instance vars. _name is set to input String.
+      =============================================*/
+    public Pet( String name ) {
+	this();
+	if (!name.equals("")) {
+	    _name = name;
+	}
     }
 
     // Does nothing for Pets

@@ -54,6 +54,7 @@ public class YoRPG
 
 	String s;
 	String name = "";
+	String pName = "";
 	s = "Welcome to Ye Olde RPG!\n";
 
 	s += "\nChoose your difficulty: \n";
@@ -123,11 +124,18 @@ public class YoRPG
                 s = pat.about();
 	    } else {
 		s = "Invalid choice. Choose a character class from the list: ";
-	    }
-	
+	    }	
 
 	System.out.print( s );
 	}
+	s = "\nThat is a nice pet you got there. What be it's name?";
+	System.out.println(s);
+	try {
+	    pName = in.readLine();
+	}
+	catch ( IOException e ) { }
+	wolf = new Pet(pName);
+	
 	System.out.println("\n\n~~~~~~ START OF GAME ~~~~~~");
 	
 
@@ -219,7 +227,7 @@ public class YoRPG
 		    System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
 				    " for " + d2 + " points of damage.");
 
-		    System.out.println( "\n" + wolf.getName() + " bit Ye Olde Monster for" +
+		    System.out.println( "\n" + wolf.getName() + " bit Ye Olde Monster for " +
 		    			+ d3 + " points of damage.");
 
 		    // Adds item to inventory, if item is not named "none"
