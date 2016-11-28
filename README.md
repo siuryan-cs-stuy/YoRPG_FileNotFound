@@ -15,7 +15,6 @@ Follow the prompts as you are guided through the world of YoRPG, choosing your c
   - Healing items: Restores HP.
   - Attacking items: Does damage to the Monster.
 - Added element of randomness to attack damage for all Characters
-- Secret Easter Egg class! ;)
 - Modifications to UI 
   - Added helpful information between turns
 - More choices between turns
@@ -23,6 +22,7 @@ Follow the prompts as you are guided through the world of YoRPG, choosing your c
   - Special hero moves can affect your stats either positively or negatively
 - Pets (cause who doesn't want their own dragon)
   - Deal additional damage to opponent when attacking
+- Secret Easter Egg character and pet classes! ;)
 
 ##Architecture Modifications:
 - Added a new class called InventoryItems for implementing inventories
